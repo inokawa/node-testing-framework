@@ -16,6 +16,7 @@
   "homepage": "https://github.com/inokawa/node-cli-practice#readme",
   "dependencies": {
     "chalk": "^5.0.0",
+    "expect": "^27.4.6",
     "jest-haste-map": "^27.4.6",
     "jest-worker": "^27.4.6"
   }
