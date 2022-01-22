@@ -17,10 +17,13 @@ exports.runTest = async function (testFile) {
     let environment;
     const customRequire = (fileName) => {
       const code = readFileSync(join(dirname(testFile), fileName), "utf8");
-      return vm.runInContext(
-        "const module = {exports: {}};\n" + code + ";module.exports;",
+      const moduleFactory = vm.runInContext(
+        `(function(module) {${code}})`,
         environment.getVmContext()
       );
+      const module = { exports: {} };
+      moduleFactory(module);
+      return module.exports;
     };
     environment = new NodeEnvironment({
       testEnvironmentOptions: {

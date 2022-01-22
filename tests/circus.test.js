@@ -4,6 +4,12 @@ it("tastes good", () => {
   expect(banana).toBe("good");
 });
 
+const apple = require("./apple.js");
+
+it("tastes delicious", () => {
+  expect(apple).toBe("delicious");
+});
+
 describe("circus test", () => {
   it("works", () => {
     expect(1).toBe(1);
