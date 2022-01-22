@@ -12,9 +12,11 @@ exports.runTest = async function (testFile) {
   };
   try {
     resetState();
-    const context = { describe, it, expect, mock };
-    vm.createContext(context);
-    vm.runInContext(code, context);
+    const NodeEnvironment = require("jest-environment-node");
+    const environment = new NodeEnvironment({
+      testEnvironmentOptions: { describe, it, expect, mock },
+    });
+    vm.runInContext(code, environment.getVmContext());
 
     const { testResults } = await run();
     testResult.testResults = testResults;
