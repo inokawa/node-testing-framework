@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/inokawa/node-cli-practice#readme",
   "dependencies": {
-    "jest-haste-map": "^27.4.6"
+    "jest-haste-map": "^27.4.6",
+    "jest-worker": "^27.4.6"
   }
 }
