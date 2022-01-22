@@ -1,3 +1,9 @@
+const banana = require("./banana.js");
+
+it("tastes good", () => {
+  expect(banana).toBe("good");
+});
+
 describe("circus test", () => {
   it("works", () => {
     expect(1).toBe(1);
